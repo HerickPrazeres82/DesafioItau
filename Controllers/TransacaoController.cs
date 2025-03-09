@@ -24,8 +24,6 @@ namespace DesafioItau.Controllers
             {
                 if (transacaoResponse.StatusCode == 422)
                     return UnprocessableEntity();
-
-                return BadRequest();
             }
 
             return Created();

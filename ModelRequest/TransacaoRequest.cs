@@ -14,6 +14,8 @@
 
             if (datahora > DateTime.UtcNow)
                 result = false;
+            else if(datahora.Year == 0001)
+                result = false;
 
             return result;
         }

@@ -22,19 +22,11 @@ namespace DesafioItau.Services
 
             TransacaoResponse response = new();
 
-            if (!dataHoraValida)
+            if (!valorValido || !dataHoraValida)
             {
-                response.StatusCode = 422;
-                response.ErrorMessage = "A data da transação não pode estar no futuro.";
+                response.StatusCode = 422;                
                 return response;
             }               
-
-            if(!valorValido)
-            {
-                response.StatusCode = 422;
-                response.ErrorMessage = "O valor da transação deve ser igual ou maior que zero.";
-                return response;
-            }
 
             response.StatusCode = 201;
             _transacoes.Add(new Transacao(valor: transacaoRequest.Valor, dataHora: transacaoRequest.DataHora));
