@@ -10,24 +10,23 @@
         #region Validações
         public bool ValidarDataHora(DateTimeOffset datahora)
         {
-            var result = true;
+            var valida = true;
 
             if (datahora > DateTime.UtcNow)
-                result = false;
-            else if(datahora.Year == 0001)
-                result = false;
+            {
+                valida = false;
+            }                
+            else if(datahora == DateTimeOffset.MinValue)
+            {
+                valida = false;
+            }
 
-            return result;
+            return valida;
         }
 
         public bool ValidarValor(decimal valor)
         {
-            var result = true;
-
-            if (valor < 0)
-                result = false;
-
-            return result;
+            return valor >= 0;
         }
 
         #endregion

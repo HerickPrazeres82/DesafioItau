@@ -15,7 +15,6 @@ namespace DesafioItau.Controllers
         [HttpGet]
         public IActionResult ObterEstatisticas()
         {
-            //https://github.com/feltex/desafio-itau-backend
             _transacoes = TransacaoService.ObterTransacoes();
 
             var response = EstatisticaService.ObterDadosEstatisticos(_transacoes);            
