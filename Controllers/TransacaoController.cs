@@ -7,12 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioItau.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class TransacaoController : ControllerBase
+    public class TransacaoController : BaseController
     {
         private List<Transacao> _transacoes { get; set; } = [];
-
+        
         [HttpPost]
         public IActionResult RealizarTransacao([FromBody] TransacaoRequest transacaoRequest)
         {
@@ -26,7 +24,7 @@ namespace DesafioItau.Controllers
                     return UnprocessableEntity();
             }
 
-            return Created();
+            return Ok(transacaoRequest);
         }
 
         [HttpDelete]

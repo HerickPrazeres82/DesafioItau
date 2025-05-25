@@ -15,7 +15,7 @@ namespace DesafioItau.Services
             return _transacoes;
         }
 
-        public static TransacaoResponse CriarTransacao(this TransacaoRequest transacaoRequest)
+        public static TransacaoResponse CriarTransacao(TransacaoRequest transacaoRequest)
         {
             var dataHoraValida = transacaoRequest.ValidarDataHora(transacaoRequest.DataHora);
             var valorValido = transacaoRequest.ValidarValor(transacaoRequest.Valor);

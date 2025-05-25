@@ -6,9 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioItau.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class EstatisticaController : ControllerBase
+    public class EstatisticaController : BaseController
     {
         private List<Transacao> _transacoes = [];
 
